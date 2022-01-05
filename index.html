@@ -14,34 +14,53 @@
 
             <div class="top">
                 <div class="title">Shopping cart</div>
-                <a href="" id="remove-all-btn">Remove all</a>
+                <a href="" class="remove-buttons" id="remove-all-btn">Remove all</a>
             </div>
 
             <!-- Item structure -->
             <div class="item-container">
-                <div class="item-title">Item 1</div>
-                <div class="quantity-container">
-                    <button id="plus-btn">+</button>
-                    <span id="quantity">1</span>
-                    <button id="minus-btn">-</button>
-                </div>
-                <div class="price-container">
-                    <span id="price">$$$</span>
-                    <a href="" id="remove-btn">Remove</a>
+                <div class="item-wrapper">
+                    <div class="item-title">Item 1</div>
+                    <div class="quantity-container">
+                        <button class="quantity-button" id="plus-btn">+</button>
+                        <span  id="quantity">1</span>
+                        <button class="quantity-button" id="minus-btn">-</button>
+                    </div>
+                    <div class="price-container">
+                        <span id="price">$$$</span>
+                        <a href="" class="remove-buttons" id="remove-btn">Remove</a>
+                    </div>
                 </div>
             </div>
             <!-- Item structure -->
 
             <div class="sum-container">
-                <div class="total-container">
-                    <p>Total</p>
-                    <span id="total">$$$</span>
-                </div>
-                <button id="checkout">Checkout</button>
+                    <div class="total-container">
+                        <p>Total</p>
+                        <span id="total">$$$</span>
+                    </div>
+                    <button id="checkout">Checkout</button>
             </div>
         </div>
     </div>
 
+    <div class="list-container">
+        <div class="list-item">
+            <span>Test</span>
+            <p>Price</p>
+            <button id="add-button">Add</button>
+        </div>
+        <div class="list-item">
+            <span>Test</span>
+            <p>Price</p>
+            <button id="add-button">Add</button>
+        </div>
+        <div class="list-item">
+            <span>Test</span>
+            <p>Price</p>
+            <button id="add-button">Add</button>
+        </div>
+    </div>
 
     <script src="main.js"></script>
 </body>
