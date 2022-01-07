@@ -7,18 +7,6 @@ const Objects =[
 ]
 
 
-// Buttons
-
-
-
-
-
-
-
-
-
-
-
 
 const addItemContainer = document.getElementsByClassName('add-item-container')
 
@@ -34,22 +22,18 @@ Objects.forEach(element => {
         </div>`)
     }
 });
-const nameValue = document.querySelectorAll('#add-item-name')
-const priceValue = document.querySelectorAll('#add-item-price')
-const itemWrapper = document.querySelector('.item-wrapper') 
 const addBtn = document.querySelectorAll('#add-button')
-
 for (let i = 0; i < addBtn.length; i++) {
         const clicked = addBtn[i];
         clicked.addEventListener('click', (e) =>{
             e.preventDefault();
             itemWrapper.insertAdjacentHTML('afterbegin', `<div class="item">
-                        <span class="item-name">${nameValue.value}</span>
+                        <span class="item-name">${nameValue}</span>
                         <div class="quantity-container">
                             <input type="number" id="quantity"></input>
                         </div>
                         <div class="price-container">
-                            <span id="price">$${priceValue.value}</span>
+                            <span id="price">$${priceValue.innerHTML}</span>
                         </div>
                         <button class="remove-btn">Remove</button>
                     </div>`)
@@ -63,29 +47,25 @@ for (let i = 0; i < addBtn.length; i++) {
                         })
                     }
                 })
-
     }
+const nameValue = document.querySelectorAll('#add-item-name')
+const priceValue = document.querySelectorAll('#add-item-price')
+const itemWrapper = document.querySelector('.item-wrapper') 
+
+
+
+
+
+
     const removeAll = document.getElementById('remove-all-btn')
     removeAll.addEventListener('click', (e) =>{
         e.preventDefault();
         itemContainer.innerHTML = '';
     })
-
+    const itemContainer = document.querySelector('.item-wrapper')
     
     
+
     
 
 
-
-// ADDING ITEMS TO SHOPPING CART
-    
-    // itemWrapper.insertAdjacentHTML('afterbegin', `<div class="item">
-    //                     <span class="item-name">${nameValueIterator}</span>
-    //                     <div class="quantity-container">
-    //                         <input type="number" id="quantity"></input>
-    //                     </div>
-    //                     <div class="price-container">
-    //                         <span id="price">$${priceValueIterator}</span>
-    //                     </div>
-    //                     <a href="" class="remove-btn">Remove</a>
-    //                 </div>`)
