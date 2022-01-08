@@ -2,6 +2,7 @@ const Objects =[
     {name: 'Bread', price: 250},
     {name: 'Shoes', price: 59.99},
     {name: 'Lambo', price: 1.99},
+    {name: 'My left lung', price: 3.99},
     {name: 'My right lung', price: 2.50},
     {name: 'Gourmet stuff', price: 9999}
 ]
@@ -23,17 +24,34 @@ Objects.forEach(element => {
     }
 });
 const addBtn = document.querySelectorAll('#add-button')
+const nameValue = document.querySelectorAll('#add-item-name')
+const priceValue = document.querySelectorAll('#add-item-price')
+
+const nameValueArray = []
+const priceValueArray = []
+const products = []
+
+for (let i = 0; i < nameValue.length; i++) {
+    const names = nameValue[i].textContent
+    nameValueArray.push(names)
+}
+for (let i = 0; i < priceValue.length; i++) {
+    const prices = priceValue[i].textContent
+    priceValueArray.push(prices)
+}
+
+
 for (let i = 0; i < addBtn.length; i++) {
         const clicked = addBtn[i];
         clicked.addEventListener('click', (e) =>{
-            e.preventDefault();
+            e.preventDefault()
             itemWrapper.insertAdjacentHTML('afterbegin', `<div class="item">
-                        <span class="item-name">${nameValue}</span>
+                        <span class="item-name">${nameValueArray[i]}</span>
                         <div class="quantity-container">
                             <input type="number" id="quantity"></input>
                         </div>
                         <div class="price-container">
-                            <span id="price">$${priceValue.innerHTML}</span>
+                            <span id="price">${priceValueArray[i]}</span>
                         </div>
                         <button class="remove-btn">Remove</button>
                     </div>`)
@@ -48,24 +66,12 @@ for (let i = 0; i < addBtn.length; i++) {
                     }
                 })
     }
-const nameValue = document.querySelectorAll('#add-item-name')
-const priceValue = document.querySelectorAll('#add-item-price')
+
 const itemWrapper = document.querySelector('.item-wrapper') 
 
-
-
-
-
-
+const itemContainer = document.querySelector('.item-wrapper')
     const removeAll = document.getElementById('remove-all-btn')
     removeAll.addEventListener('click', (e) =>{
         e.preventDefault();
         itemContainer.innerHTML = '';
     })
-    const itemContainer = document.querySelector('.item-wrapper')
-    
-    
-
-    
-
-
