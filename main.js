@@ -67,11 +67,14 @@ for (let i = 0; i < addBtn.length; i++) {
                 })
     }
 
+
+
+
+    
 const itemWrapper = document.querySelector('.item-wrapper') 
 
-const itemContainer = document.querySelector('.item-wrapper')
     const removeAll = document.getElementById('remove-all-btn')
     removeAll.addEventListener('click', (e) =>{
         e.preventDefault();
-        itemContainer.innerHTML = '';
+        itemWrapper.innerHTML = '';
     })
